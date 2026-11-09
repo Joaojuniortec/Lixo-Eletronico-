@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça os impactos do lixo eletrônico e saiba como fazer o descarte correto.">
+  <title>Lixo Eletrônico | Meio Ambiente</title>
+  <style>
+    :root {
+      --green: #14532d;
+      --green-dark: #0b3b0b;
+      --green-light: #eaf4ec;
+      --text: #24312a;
+      --muted: #5c6b61;
+      --surface: #ffffff;
+      --background: #f4f7f4;
+      --border: #dce7de;
+      --shadow: 0 10px 28px rgba(15, 55, 30, .08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.7;
+    }
+    a { color: var(--green); }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+    .nav {
+      width: min(1120px, 92%);
+      margin: auto;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      color: var(--green-dark);
+      font-weight: 800;
+      letter-spacing: .3px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: flex-end;
+    }
+    .nav-links a {
+      color: var(--muted);
+      font-size: .92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .nav-links a:hover { color: var(--green); }
+
+    .hero {
+      color: white;
+      background: linear-gradient(135deg, rgba(7,48,22,.96), rgba(27,105,57,.88)),
+                  linear-gradient(135deg, rgba(7,48,22,.96), rgba(27,105,57,.88));
+      padding: 76px 4% 72px;
+    }
+    .hero-inner { width: min(1120px, 100%); margin: auto; }
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      max-width: 760px;
+      margin: 18px 0 12px;
+      font-size: clamp(2.3rem, 6vw, 4.3rem);
+      line-height: 1.08;
+    }
+    .hero p {
+      max-width: 700px;
+      margin: 0;
+      color: #e7f3e9;
+      font-size: 1.12rem;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      background: white;
+      color: var(--green-dark);
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .button:hover { background: var(--green-light); }
+
+    main { width: min(1120px, 92%); margin: 38px auto 70px; }
+    .intro {
+      padding: 28px;
+      margin-bottom: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+    .intro h2, .section h2 {
+      margin-top: 0;
+      color: var(--green-dark);
+      line-height: 1.25;
+    }
+    .intro p { margin-bottom: 0; }
+    .toc {
+      padding: 26px;
+      margin: 28px 0;
+      background: var(--green-light);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+    .toc h2 { margin: 0 0 14px; color: var(--green-dark); }
+    .toc ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 10px 24px;
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc a { font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+    .section {
+      padding: 30px;
+      margin: 24px 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 86px;
+    }
+    .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
+    .section p:last-child { margin-bottom: 0; }
+    .section img {
+      display: block;
+      width: min(100%, 420px);
+      max-height: 280px;
+      object-fit: cover;
+      margin: 8px auto 22px;
+      border: 0;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.10);
+    }
+    .section ul, .section ol { padding-left: 24px; }
+    .section li { margin: 6px 0; }
+    .highlight {
+      padding: 18px 20px;
+      margin: 18px 0;
+      border-left: 5px solid #3b8a50;
+      border-radius: 8px;
+      background: var(--green-light);
+    }
+    .back-top {
+      display: inline-block;
+      margin-top: 18px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    footer {
+      padding: 28px 4%;
+      color: #e8f2e9;
+      text-align: center;
+      background: var(--green-dark);
+    }
+    footer p { margin: 4px 0; }
+
+    @media (min-width: 760px) {
+      .section.with-image::after { content: ""; display: table; clear: both; }
+      .section.with-image img {
+        float: right;
+        width: min(38%, 360px);
+        margin: 4px 0 18px 26px;
+      }
+    }
+    @media (max-width: 700px) {
+      .nav { align-items: flex-start; flex-direction: column; padding: 14px 0; }
+      .nav-links { justify-content: flex-start; gap: 8px 14px; }
+      .hero { padding: 58px 4%; }
+      .section, .intro, .toc { padding: 22px; }
+    }
+  </style>
+</head>
+<body id="topo">
+  <header class="topbar">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="#topo">MEIO AMBIENTE</a>
+      <div class="nav-links">
+        <a href="#o-que-e">O que é</a>
+        <a href="#problemas">Problemas</a>
+        <a href="#descarte">Descarte</a>
+        <a href="#reciclagem">Reciclagem</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">Consciência ambiental</span>
+      <h1>Lixo eletrônico</h1>
+      <p>Entenda os impactos do descarte inadequado de equipamentos eletrônicos e conheça atitudes que ajudam a proteger o meio ambiente.</p>
+      <a class="button" href="#o-que-e">Conheça o tema</a>
+    </div>
+  </section>
+
+  <main>
+    <section class="intro" id="o-que-e">
+      <h2>O que é lixo eletrônico?</h2>
+      <p>Lixo eletrônico é todo resíduo material produzido pelo descarte de equipamentos eletrônicos. Com o elevado uso desses equipamentos no mundo moderno, esse tipo de lixo se tornou um problema ambiental quando não é descartado em locais adequados.</p>
+    </section>
+
+    <nav class="toc" aria-label="Índice do conteúdo">
+      <h2>Navegue pelos tópicos</h2>
+      <ul>
+        <li><a href="#exemplos">Exemplos de lixo eletrônico</a></li>
+        <li><a href="#problemas">Problemas do descarte inadequado</a></li>
+        <li><a href="#descarte">Onde descartar?</a></li>
+        <li><a href="#lembre-se">Lembre-se</a></li>
+        <li><a href="#voce-sabia">Você sabia?</a></li>
+        <li><a href="#meio-ambiente">Lixo eletrônico e meio ambiente</a></li>
+        <li><a href="#reciclagem">Reciclagem</a></li>
+        <li><a href="#coleta">Coleta e descarte</a></li>
+        <li><a href="#brasil">Lixo eletrônico no Brasil</a></li>
+        <li><a href="#solucoes">Consequências e soluções</a></li>
+      </ul>
+    </nav>
+
+    <section class="section" id="exemplos">
+      <h2>Exemplos de lixo eletrônico</h2>
+      <ul>
+        <li>Monitores de computadores;</li>
+        <li>Telefones celulares e baterias;</li>
+        <li>Computadores;</li>
+        <li>Televisores;</li>
+        <li>Câmeras fotográficas;</li>
+        <li>Impressoras.</li>
+      </ul>
+    </section>
+
+    <section class="section with-image" id="problemas">
+      <h2>Problemas causados pelo descarte inadequado</h2>
+      <img src="descarte.jpg" alt="Descarte de equipamentos eletrônicos">
+      <p>O descarte ocorre quando um equipamento apresenta defeito ou se torna obsoleto (ultrapassado). O problema aparece quando esse material é abandonado no meio ambiente. Alguns equipamentos possuem substâncias químicas, como chumbo, cádmio, mercúrio e berílio, que podem provocar a contaminação do solo e da água.</p>
+      <p>Além dos danos ambientais, o contato inadequado com esses resíduos pode causar problemas à saúde. Esses equipamentos também contêm plástico, metais e vidro, materiais que podem levar muito tempo para se decompor no solo.</p>
+    </section>
+
+    <section class="section" id="descarte">
+      <h2>Onde descartar? Descarte correto e reutilização</h2>
+      <p>Para evitar a contaminação e a poluição do meio ambiente, o correto é encaminhar o lixo eletrônico a locais apropriados, como empresas e cooperativas que atuam na área de reciclagem.</p>
+      <p>Celulares e baterias podem ser entregues em pontos de coleta disponibilizados por empresas de telefonia e pelo comércio. Outra opção é doar equipamentos em boas condições, mas que não estão mais em uso, para entidades sociais que atuam na área de inclusão digital.</p>
+    </section>
+
+    <section class="section" id="lembre-se">
+      <h2>Lembre-se</h2>
+      <p>O primeiro passo para evitar a poluição do meio ambiente é fazer a coleta seletiva em casas, escolas e empresas. O lixo eletrônico deve ser separado dos resíduos orgânicos e dos materiais recicláveis comuns, como papel, plástico, vidro e metal, e encaminhado a um ponto de recebimento adequado.</p>
+    </section>
+
+    <section class="section" id="voce-sabia">
+      <h2>Você sabia?</h2>
+      <p>O lixo eletrônico é um desafio mundial, e sua geração aumenta com o consumo e a substituição frequente de equipamentos.</p>
+      <div class="highlight">
+        <strong>Exemplos de resíduos eletrônicos:</strong>
+        <ul>
+          <li>Computadores, tablets e monitores;</li>
+          <li>Teclados e impressoras;</li>
+          <li>Câmeras fotográficas e aparelhos de som;</li>
+          <li>Lâmpadas eletrônicas e televisores;</li>
+          <li>Geladeiras, fogões e micro-ondas;</li>
+          <li>Rádios, telefones e celulares;</li>
+          <li>Carregadores, baterias, pilhas e fios.</li>
+        </ul>
+      </div>
+      <p><strong>Fonte mencionada no material original:</strong> PNUMA — Programa das Nações Unidas para o Meio Ambiente.</p>
+    </section>
+
+    <section class="section" id="meio-ambiente">
+      <h2>Lixo eletrônico e o meio ambiente</h2>
+      <p>O lixo eletrônico pode conter materiais como cobre, alumínio e metais pesados, entre eles mercúrio, cádmio, berílio e chumbo. Quando descartados de forma inadequada, esses componentes podem contaminar o solo e os lençóis freáticos, comprometendo o equilíbrio ecológico.</p>
+      <p>Além de poluir o ambiente, o contato inadequado com esses resíduos pode trazer riscos à saúde dos animais e dos seres humanos.</p>
+    </section>
+
+    <section class="section" id="reciclagem">
+      <h2>Reciclagem de lixo eletrônico</h2>
+      <p>A reciclagem permite recuperar materiais presentes nos equipamentos descartados e reduzir a necessidade de extração de novas matérias-primas. Esse processo deve ser realizado por serviços preparados para lidar com os componentes e resíduos de maneira segura.</p>
+      <p>Com a globalização e o avanço da tecnologia, novos aparelhos são lançados em intervalos cada vez menores. Isso pode incentivar a troca de equipamentos que ainda funcionam e aumentar a quantidade de resíduos produzidos.</p>
+      <p>Por isso, antes de descartar um aparelho, vale considerar o conserto, a reutilização ou a doação. Quando não houver possibilidade de reaproveitamento, o caminho adequado é a reciclagem especializada.</p>
+    </section>
+
+    <section class="section with-image" id="coleta">
+      <h2>Coleta e descarte do lixo eletrônico</h2>
+      <img src="coleta.jpg" alt="Etapas de coleta, triagem e reciclagem de resíduos eletrônicos">
+      <img src="coleta.jpg" alt="Coleta de resíduos eletrônicos para destinação adequada">
+      <p>Algumas empresas, fabricantes, lojas e iniciativas de reciclagem oferecem pontos de recebimento para equipamentos usados. Esses locais encaminham os materiais para processos de reaproveitamento ou destinação ambientalmente adequada.</p>
+      <p>Antes de levar um aparelho, consulte as orientações do ponto de coleta para saber quais tipos de equipamentos são aceitos.</p>
+    </section>
+
+    <section class="section" id="brasil">
+      <h2>Lixo eletrônico no Brasil</h2>
+      <p>O aumento da comercialização e da utilização de produtos eletrônicos também amplia o desafio de gerenciar os resíduos no Brasil. A destinação correta depende da participação de fabricantes, comerciantes, consumidores e serviços de coleta e reciclagem.</p>
+      <p>A Lei Estadual nº 13.576, de 6 de julho de 2009, de São Paulo, estabelece normas e procedimentos para a reciclagem, o gerenciamento e a destinação final do lixo tecnológico. O material original destaca a responsabilidade compartilhada entre empresas que produzem, comercializam ou importam esses produtos.</p>
+      <p>Campanhas de conscientização e a ampliação dos pontos de coleta ajudam a informar a população sobre a separação e o descarte adequado desses materiais.</p>
+    </section>
+
+    <section class="section" id="solucoes">
+      <h2>Consequências e possíveis soluções</h2>
+      <p>O descarte incorreto de resíduos eletrônicos pode causar impactos ao meio ambiente e à saúde. Uma das principais soluções é encaminhar os equipamentos a empresas, cooperativas ou pontos de coleta preparados para receber esses materiais.</p>
+      <p>Também é importante prolongar a vida útil dos aparelhos, consertar quando possível e doar equipamentos que ainda estejam funcionando. Essas atitudes ajudam a reduzir o volume de resíduos e favorecem o reaproveitamento de materiais.</p>
+      <a class="back-top" href="#topo">↑ Voltar ao início</a>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Lixo eletrônico: descarte consciente, futuro sustentável.</strong></p>
+    <p>Projeto acadêmico — APS</p>
+  </footer>
+</body>
+</html>
